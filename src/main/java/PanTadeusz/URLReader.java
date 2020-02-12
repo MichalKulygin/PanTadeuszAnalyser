@@ -5,18 +5,17 @@ import java.io.*;
 
 public class URLReader {
     public static String panTadeuszString() throws Exception {
-        String panTadeuszAsString;
+        String panTadeuszAsString = null;
 
-        URL oracle = new URL("https://wolnelektury.pl/media/book/txt/pan-tadeusz.txt");
+        URL url = new URL("https://wolnelektury.pl/media/book/txt/pan-tadeusz.txt");
         BufferedReader in = new BufferedReader(
-                new InputStreamReader(oracle.openStream()));
+                new InputStreamReader(url.openStream()));
 
         String inputLine;
         while ((inputLine = in.readLine()) != null)
-            System.out.println(inputLine);
-        panTadeuszAsString = new StringBuilder().append(inputLine).toString();
+            panTadeuszAsString = panTadeuszAsString + inputLine + "\n";
         in.close();
 
-    return panTadeuszAsString;
+        return panTadeuszAsString.substring(panTadeuszAsString.indexOf("Księga pierwsza"),panTadeuszAsString.indexOf("-----"));
     }
 }
