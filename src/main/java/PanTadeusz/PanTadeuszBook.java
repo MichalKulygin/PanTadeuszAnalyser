@@ -10,8 +10,7 @@ public class PanTadeuszBook {
         Map<String, Integer> map = new TreeMap<String, Integer>();
 
         //String[] panTadeuszAsArray = panTadeuszString().replaceAll("[\\\\W]|_—,.:!", "").split(" ");
-        String[] panTadeuszAsArray = panTadeuszString().replaceAll("[,.();…/0-9*«»?:!—\\-]", "").split(" ");
-        //String[] panTadeuszAsArray = panTadeuszString().replaceAll("^[^a-zA-Z0-9,.!]", "").split(" ");
+        String[] panTadeuszAsArray = panTadeuszString().replaceAll("[,.();…/0-9*«»?:!—\\-]", "").split("\\s");
 
         for(int i =0;i<panTadeuszAsArray.length;i++){
             System.out.println(panTadeuszAsArray[i]);
@@ -19,11 +18,11 @@ public class PanTadeuszBook {
 
 
         for (String s : panTadeuszAsArray) {
-            if (!map.containsKey(s.toLowerCase()))
-                map.put(s.toLowerCase(), 1);
+            if (!map.containsKey(s))
+                map.put(s, 1);
             else{
-                int count = map.get(s.toLowerCase());
-                map.put(s.toLowerCase(), count + 1);
+                int count = map.get(s);
+                map.put(s, count + 1);
             }
         }
 
