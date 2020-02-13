@@ -1,15 +1,16 @@
 package PanTadeusz;
 
-import static PanTadeusz.PanTadeuszBook.panTadeuszBookTekstOnly;
-import static PanTadeusz.URLReader.panTadeuszString;
+import com.sun.source.tree.Tree;
+
+import java.util.Map;
+
+import static PanTadeusz.PanTadeuszBook.panTadeuszBookTekstToTreeSet;
 
 public class App {
     public static void main(String[] args) throws Exception {
 
-        String panTadeusz2 = panTadeuszString();
-        String panTadeusz = panTadeuszBookTekstOnly();
+        Map<String, Integer> map = panTadeuszBookTekstToTreeSet();
 
-        System.out.println(panTadeusz2);
-
+        System.out.println(map.get("tadeusz"));
     }
 }
