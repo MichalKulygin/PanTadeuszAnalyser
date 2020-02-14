@@ -2,13 +2,16 @@ package PanTadeusz;
 
 import java.util.Map;
 
-import static PanTadeusz.PanTadeuszBook.panTadeuszBookTekstToTreeSet;
+import static PanTadeusz.PanTadeuszBook.panTadeuszBookTekstToTreeMap;
 
 public class App {
     public static void main(String[] args) throws Exception {
 
-        Map<String, Integer> map = panTadeuszBookTekstToTreeSet();
+        PanTadeuszAnalyser panTadeuszAnalyser = new PanTadeuszAnalyser();
 
-        System.out.println(map.get("Tadeusz"));
+        panTadeuszAnalyser.panTadeuszStatistics();
+        panTadeuszAnalyser.entrySetToArray();
+        panTadeuszAnalyser.entryKeySetToArray();
+
     }
 }

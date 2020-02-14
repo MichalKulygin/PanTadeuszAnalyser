@@ -6,14 +6,13 @@ import java.util.TreeMap;
 import static PanTadeusz.URLReader.panTadeuszString;
 
 public class PanTadeuszBook {
-    public static Map<String, Integer> panTadeuszBookTekstToTreeSet() throws Exception {
+    public static Map<String, Integer> panTadeuszBookTekstToTreeMap() throws Exception {
         Map<String, Integer> map = new TreeMap<String, Integer>();
 
         //String[] panTadeuszAsArray = panTadeuszString().replaceAll("[\\\\W]|_—,.:!", "").split(" ");
         String[] panTadeuszAsArray = panTadeuszString().replaceAll("[,.();…/0-9*«»?:!—\\-]", "").split("\\s");
 
         for(int i =0;i<panTadeuszAsArray.length;i++){
-            System.out.println(panTadeuszAsArray[i]);
         }
 
 
