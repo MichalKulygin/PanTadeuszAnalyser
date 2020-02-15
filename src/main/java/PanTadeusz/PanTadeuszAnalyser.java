@@ -72,7 +72,13 @@ public class PanTadeuszAnalyser {
     }
 
     public int howManyTimesMyWordOccursInPanTadeuszBook(String myWord) {
-        return getPanTadeuszWordsMap().get(myWord.toLowerCase());
+        int howManyTimesWordOccurs = 0;
+
+        try {
+            howManyTimesWordOccurs = getPanTadeuszWordsMap().get(myWord.toLowerCase());
+        } catch (Exception ignored) {
+        }
+        return howManyTimesWordOccurs;
     }
 
     // entrySetToArray - prints map values

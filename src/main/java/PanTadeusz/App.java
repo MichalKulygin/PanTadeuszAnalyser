@@ -6,8 +6,10 @@ public class App {
         PanTadeuszAnalyser panTadeuszAnalyser = new PanTadeuszAnalyser();
         panTadeuszAnalyser.panTadeuszStatistics();
 
-        System.out.print("Word \"Robak\" occures: ");
-        System.out.println(panTadeuszAnalyser.howManyTimesMyWordOccursInPanTadeuszBook("Robak") + " times.");
+
+        String testWord = "Robak";
+        System.out.print("Word " + testWord + " occures: ");
+        System.out.println(panTadeuszAnalyser.howManyTimesMyWordOccursInPanTadeuszBook(testWord) + " times.");
 
     }
 }
