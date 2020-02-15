@@ -1,17 +1,13 @@
 package PanTadeusz;
 
-import java.util.Map;
-
-import static PanTadeusz.PanTadeuszBook.panTadeuszBookTekstToTreeMap;
-
 public class App {
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) {
 
         PanTadeuszAnalyser panTadeuszAnalyser = new PanTadeuszAnalyser();
-
         panTadeuszAnalyser.panTadeuszStatistics();
-        panTadeuszAnalyser.entrySetToArray();
-        panTadeuszAnalyser.entryKeySetToArray();
+
+        System.out.print("Word \"Robak\" occures: ");
+        System.out.println(panTadeuszAnalyser.howManyTimesMyWordOccursInPanTadeuszBook("Robak") + " times.");
 
     }
 }
